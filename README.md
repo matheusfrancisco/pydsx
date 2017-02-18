@@ -13,7 +13,7 @@
 3. [Unidade II](unidade2)
 	1. [Recursão](#recursao)
 4. [Unidade III](#unidade3)
-	1. [Algoritmos de Ordenaçã](#ordena)
+	1. [Algoritmos de Ordenação](#ordena)
 5. [Listas de Exercícios](#listasexe)
 
 
