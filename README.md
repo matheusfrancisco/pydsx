@@ -24,6 +24,7 @@ Este repositório tem a função de compartilhar listas de exercícios  utilizan
 
 ## Unidade I <a name="unidade1"></a>
 Nesta unidade será postado exemplos utilizando a estrutra de lista encadeadas.
+[visualizar](https://github.com/matheusfrancisco/Estrutura-de-Dados/tree/master/Unidade_I)
 
 ## Unidade 3 <a name="unidade2"></a>
 
