@@ -62,7 +62,23 @@ Como na lista simplesmente encadeada podemos utilizar uma celula no inicio vazia
 
 ### Lista Circular  <a name="listac"></a>
 
+A lista circular é uma espécie de lista simplesmente ou duplamente encadeada, com uma característica adicional para o deslocamento na lista, "ela não tem fim". 
+Para tornar a lista interminável, o ponteiro seguinte do último elemento apontará para o primeiro elemento da lista, em vez do valor NULL, como vimos no caso das listas simplesmente e duplamente encadeadas. 
+Nas listas circulares, nunca chegaremos a uma posição a partir da qual não poderemos mais nos mover. 
+Chegando ao último elemento, o deslocamento vai recomeçar no primeiro elemento. Em suma, trata-se de uma rotação. 
 
 
+Com isso facilita para acessar o ultimo elemento não precisamos percorrer toda a lista, devido as operações de insereção no final da lista, remoção e busca tem seu custo um pouco mais eficiente que as demais listas.<br>
 
+A estrutura dela pode ser utilizada igual a duplamente encadeada porém teremos que tomar cuidado com os ponteiros do início e do final..
+
+```c
+struct celula {
+int x; // Dado que cada célula armazena, nesse caso é um numero inteiro;
+struct celula * prox;
+struct celula * ant; //ponteiro que aponta para a lista anterior;
+};
+
+typedef celula Celula;
+```
 
