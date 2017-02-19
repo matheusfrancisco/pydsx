@@ -37,7 +37,8 @@ typedef celula Celula;
 Nossa lista será composta por vaŕias células, uma ligada na outra, a diferença da lista com ou sem cabeça vai na hora de criar a célula e realizar as operações de adição, remoçaõ e busca.
 
 
-[exemplo_de_lista_s_encadeada_c_cabeca](/Listas_simplemente_encadeada/linkedList-Head.c)
+[exemplo_de_lista_s_encadeada_c_cabeca](https://github.com/matheusfrancisco/Estrutura-de-Dados/blob/master/Unidade_I/Listas_simplesmente_encadeada/linkedList-Head.c)
+Link para uma explicação bem mais detalhada de lista simplemente encadeada , [clique aqui](https://matheusfrancisco.github.io/como-criar-lista-encadeadas-em-c/)
 
 
 ### Lista Duplamente encadeada  <a name="listad"></a>
