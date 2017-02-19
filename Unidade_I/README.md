@@ -42,6 +42,7 @@ Link para uma explicação bem mais detalhada de lista simplemente encadeada , [
 
 
 ### Lista Duplamente encadeada  <a name="listad"></a>
+
 As listas duplamente encadeadas são estruturas de dados semelhantes às listas simplesmente encadeadas. A alocação da memória é feita durante a execução. No entanto, em comparação com as listas simplesmente encadeadas a conexão entre os elementos é feita através de dois ponteiros (um que aponta para o elemento anterior, e o outro, para o seguinte). 
 O ponteiro anterior ao primeiro elemento deve apontar para NULL (o início da lista). 
 O ponteiro seguinte ao último elemento deve apontar para NULL (o fim da lista). 
@@ -60,6 +61,7 @@ typedef celula Celula;
 Como na lista simplesmente encadeada podemos utilizar uma celula no inicio vazia que chamamos de cabeça, e também podemos utilizar uma celula no final no qual podemos chamar de calda.
 
 ### Lista Circular  <a name="listac"></a>
+
 
 
 

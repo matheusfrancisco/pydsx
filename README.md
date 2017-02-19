@@ -6,7 +6,7 @@
 1. [Introduação](#introduction)
 2. [Unidade I](#unidade1)
     1. [Lista simplesmente encadeada](#listas)
-    	1. [Lista  com cabeça](#ccabeca)
+    	1. [Lista com cabeça](https://github.com/matheusfrancisco/Estrutura-de-Dados/blob/master/Unidade_I/Listas_simplesmente_encadeada/linkedList-Head.c)
     	2. [Lista sem cabeça](#scabeca)
     2. [Lista duplamente encadeada](#listasd)
     3. [Lista circular](#listac)
@@ -23,8 +23,9 @@ Este repositório tem a função de compartilhar listas de exercícios  utilizan
 
 
 ## Unidade I <a name="unidade1"></a>
-Nesta unidade será postado exemplos utilizando a estrutra de lista encadeadas.
-[visualizar](https://github.com/matheusfrancisco/Estrutura-de-Dados/tree/master/Unidade_I)
+Nesta unidade será postado exemplos utilizando a estrutra de lista encadeadas, serão feitas algumas inserções e remoções afim de deixar claro como é utilizado as listas encadeadas
+[visualizar](https://github.com/matheusfrancisco/Estrutura-de-Dados/tree/master/Unidade_I)<br>
+
 
 ## Unidade 3 <a name="unidade2"></a>
 
