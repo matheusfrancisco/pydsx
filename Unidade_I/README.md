@@ -23,7 +23,7 @@ Nesta unidade será postado exemplos utilizando a estrutra de lista encadeadas.
 Segue abaixo as listas contida na unidade
 
 ### Lista Simplesmente encadeada <a name="listas"></a>
-É o modelo mais simples de listas, por ser simplesmente encadeada ela pode ser percorrida em apenas um sentido da lista. O seu início pode ser ou naõ por uma celula vazia auxiliar que chamamos de cabeça, ela é usada para aumentar a facilidade na construçaõ do algoritmo.
+É o modelo mais simples de listas, por ser simplesmente encadeada ela pode ser percorrida em apenas um sentido da lista. O seu início pode ser ou não por uma celula vazia auxiliar que chamamos de cabeça, ela é usada para aumentar a facilidade na construção do algoritmo.
 
 ```c
 struct celula {
@@ -34,11 +34,29 @@ struct celula * prox;
 typedef celula Celula;
 ```
 
-Nossa lista sera' composta por vaŕias células, uma ligada na outra, a diferença da lista com ou sem cabeça vai na hora de criar a célula e realizar as operações de adiçaõ, remoçaõ e busca.
+Nossa lista será composta por vaŕias células, uma ligada na outra, a diferença da lista com ou sem cabeça vai na hora de criar a célula e realizar as operações de adição, remoçaõ e busca.
+
+
+[exemplo_de_lista_s_encadeada_c_cabeca](/Listas_simplemente_encadeada/linkedList-Head.c)
 
 
 ### Lista Duplamente encadeada  <a name="listad"></a>
+As listas duplamente encadeadas são estruturas de dados semelhantes às listas simplesmente encadeadas. A alocação da memória é feita durante a execução. No entanto, em comparação com as listas simplesmente encadeadas a conexão entre os elementos é feita através de dois ponteiros (um que aponta para o elemento anterior, e o outro, para o seguinte). 
+O ponteiro anterior ao primeiro elemento deve apontar para NULL (o início da lista). 
+O ponteiro seguinte ao último elemento deve apontar para NULL (o fim da lista). 
 
+Para acessar um elemento, a lista pode ser percorrida pelos dois lados: 
+
+```c
+struct celula {
+int x; // Dado que cada célula armazena, nesse caso é um numero inteiro;
+struct celula * prox;
+struct celula * ant; //ponteiro que aponta para a lista anterior;
+};
+
+typedef celula Celula;
+```
+Como na lista simplesmente encadeada podemos utilizar uma celula no inicio vazia que chamamos de cabeça, e também podemos utilizar uma celula no final no qual podemos chamar de calda.
 
 ### Lista Circular  <a name="listac"></a>
 
