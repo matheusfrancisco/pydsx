@@ -1,14 +1,10 @@
 # Some implementations in Algorithms
+## Algorithms && Data struct
 
+This is codes about implementation of data struct somethings like a recursion, linked list, tree...
+and in this folder I'll  put out code about compettion programming, puzzles and some interview questions ...
 
-I would like to learn more about Data structure then I decide to write some implementation.
-
-And I will resolve some question about interview question in python or cpp.
-
-# Summary
-
-
-## Data struct
+### Summary
 
 * Recursion
 * Vectors/Array
