@@ -39,6 +39,7 @@ def anagram(s1, s2):
 
 
 if __name__ == '__main__':
-    isAnagram = anagram('clint eastwood', 'olsd west action')
+    x= input()
+    isAnagram = anagram(x, 'olsd west action')
     print(isAnagram)
     

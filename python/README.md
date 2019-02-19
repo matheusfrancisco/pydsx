@@ -1,18 +1,12 @@
 # Some implementations in Algorithms in Python
-## Algorithms && Data struct
+## Algorithms && Data structure && Projects codes
 
 This is codes about implementation of data struct somethings like a recursion, linked list, tree...
 and in this folder I'll  put out code about compettion programming, puzzles and some interview questions ...
 
 
 
-
-
-
-
-
-
-#### Just for fun
+### Projects codes
 
 
 #### Contact me

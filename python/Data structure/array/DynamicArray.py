@@ -35,9 +35,7 @@ class DynamicArray(object):
         self.A = B
         self.capacity = new_capacity
 
-    def maker_array(self, new_capacity):
+    def make_array(self, new_capacity):
 
-        return (new_cap * ctypes.py_object)()
+        return (new_capacity * ctypes.py_object)()
 
-A = DynamicArray()
-A.append(1)
