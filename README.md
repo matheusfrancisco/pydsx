@@ -26,8 +26,6 @@ and in this folder I'll  put out code about compettion programming, puzzles and 
 
 
 
-
-
 #### Just for fun
 
 
