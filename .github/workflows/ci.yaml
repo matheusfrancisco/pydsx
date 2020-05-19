@@ -1,0 +1,20 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: run lint all codes
+        run: |
+          make lint_python
+
+      - name: run tests all test codes
+        run: |
+          make test_python_data_structures

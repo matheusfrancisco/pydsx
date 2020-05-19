@@ -15,6 +15,13 @@ clean:
 	find . -name '__pycache__' -exec rm -rf {} +
 	find . -name '*.pyc' -delete
 
+format-code: __build_test_image
+	docker run \
+		-v $(shell pwd):/code \
+		-u $$(stat -c "%u:%g" $(shell pwd)) \
+		data-structure-test \
+		black .
+
 lint: __build_test_image
 	docker run \
 		-v $(shell pwd):/code \
