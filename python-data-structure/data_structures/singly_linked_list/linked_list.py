@@ -38,8 +38,72 @@ class SinglyLinkedList:
         self._head = head
         self.__len = 0
 
+    def __iter__(self):
+        """
+          Best:
+            Time Complexity O(1)
+
+          Worst:
+            Time Complexity O(N)
+        """
+        current_node = self._head
+        while current_node:
+            yield current_node.value
+            current_node = current_node.next
+
     def __len__(self):
+        """
+          Time Complexity O(1)
+        """
         return self.__len
+
+    def get(self, index):
+        """
+          Best Case:
+            Time Complexity O(N)
+
+          Worst Case:
+            Time Complexity O(N^2)
+        """
+        current_index = 0
+        current_node = self._head
+        while current_node:
+            if current_index == index:
+                return current_node.value
+            current_index += 1
+            current_node = current_node.next
+
+        raise IndexError("Index out off range")
+
+    def remove(self, index=None):
+        """
+          Time Complexity O(n)
+        """
+        if self._head is None:
+            return
+
+        if index and index > self.__len:
+            raise IndexError("List indext out of range")
+
+        if index == self.__len - 1:
+            self._head = self._head.next
+            return
+
+        raise NotImplementedError()
+
+    def pop(self, index=None):
+        """
+          Time Complexity O(1)
+        """
+
+        if index and index > self.__len:
+            raise IndexError("List indext out of range")
+
+        popped_node = self._head
+        self._head = self._head.next
+        popped_node.next = None
+        self.__len -= 1
+        return popped_node.value
 
     def append(self, value, first=True, tail=False):
         if value is None:
@@ -51,7 +115,7 @@ class SinglyLinkedList:
 
     def _append_first(self, value):
         """
-          Complexity O(1)
+          Time Complexity O(1)
         """
 
         tmp = Node(value)
@@ -61,7 +125,8 @@ class SinglyLinkedList:
 
     def _append_tail(self, value):
         """
-          Complexity O(1)
+          In the best case this code has the time complexity O(1)
+          In the worst case the time complexity O(N)
 
           Before:
             N1->N2->N3->N4->None
