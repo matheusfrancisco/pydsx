@@ -65,6 +65,31 @@ def test_should_popped_first_element_from_linked_list(singly_linked_list):
     assert singly_linked_list.get(2) == 1
 
 
+def test_change_data_in_particular_node(singly_linked_list):
+    singly_linked_list.append(1)
+    singly_linked_list.append(2)
+    singly_linked_list.append(3)
+    singly_linked_list.append(4)
+
+    singly_linked_list[1] = 5
+    assert singly_linked_list.get(1) == 5
+
+
+def test_raises_when_change_value_out_of_range(singly_linked_list):
+    singly_linked_list.append(1)
+    singly_linked_list.append(2)
+    singly_linked_list.append(3)
+    singly_linked_list.append(4)
+
+    with pytest.raises(IndexError):
+        singly_linked_list[5] = 5
+
+
+def test_raises_list_is_empty(singly_linked_list):
+    with pytest.raises(IndexError):
+        singly_linked_list[5] = 5
+
+
 # TODO Implement remove from singly linked list
 def test_should_remove_element_from_linked_list(singly_linked_list):
     singly_linked_list.append(1)

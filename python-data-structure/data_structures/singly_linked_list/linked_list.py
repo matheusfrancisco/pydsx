@@ -7,7 +7,14 @@ consisting of a collection of nodes that together represent a sequence.
 An classic linked list in python my implementation:
 
 List is:
-  Head->|Node|->|Node|->|Node|->Tail
+  Head->|Node|->|Node|->|Node|->None
+
+
+
+SOME IMPROVEMENTS:
+  [ ] - We can change the method get to __getitem__ if you want,
+         because is more pythonic
+  [ ] - We can create __delitem__ to use like this : del singly_linked_list[1]
 
 """
 
@@ -20,6 +27,10 @@ class Node:
     @property
     def value(self):
         return self.__value
+
+    @value.setter
+    def value(self, new_value):
+        self.__value = new_value
 
     @property
     def next(self):
@@ -146,6 +157,20 @@ class SinglyLinkedList:
         node.next = current_head_node.next
         current_head_node.next = node
         self.__len += 1
+
+    def __setitem__(self, index, new_value):
+        """
+          Time Complexity O(N)
+
+        """
+        current_node = self._head
+        if current_node is None:
+            raise IndexError("The linked list is empty")
+        for node_number in range(index):
+            if current_node.next is None:
+                raise IndexError("Index out of range")
+            current_node = current_node.next
+        current_node.value = new_value
 
 
 __all__ = ["SinglyLinkedList"]
