@@ -26,6 +26,9 @@ class BinarySearchTree:
          / \'  \'
         2   4  14
 
+      - [ ] TODO implement iterative insert
+      - [ ] TODO implement iterative max depth or height
+      - [ ] TODO implement iterative search node
     """
 
     def __init__(self):
@@ -81,6 +84,8 @@ class BinarySearchTree:
 
             Worst case:
               O(n)
+
+          This is a recursive insert
         """
         if data < current_node.data:
             if current_node.left is None:
@@ -96,6 +101,22 @@ class BinarySearchTree:
                 self._insert(data, current_node.right)
         else:
             raise ValueExistInTree("Value is already in tree")
+
+    def search(self, root, value):
+        """
+          Time complexity:
+            Best case: O(1) O(log n)
+            Worst case: O(n)
+
+          TODO improve the method design
+          Perhaps this can be a static or class method.
+        """
+        if root is None or root.data == value:
+            return root
+
+        if root.data < value:
+            return self.search(root.right, value)
+        return self.search(root.left, value)
 
 
 __all__ = ["BinarySearchTree", "ValueExistInTree"]

@@ -54,3 +54,13 @@ def test_should_raise_values_exist_in_tree(bst):
     bst.insert(4)
     with pytest.raises(ValueExistInTree):
         bst.insert(10)
+
+
+def test_should_find_node_with_value(bst):
+    bst.insert(8)
+    bst.insert(10)
+    bst.insert(3)
+    bst.insert(1)
+    bst.insert(4)
+    node = bst.search(bst.root, 4)
+    assert node.data == 4
