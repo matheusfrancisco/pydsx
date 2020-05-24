@@ -105,7 +105,7 @@ def test_should_remove_element_from_linked_list(singly_linked_list):
 def test_linked_list_append_node():
     singly_linked_list = SinglyLinkedList()
     singly_linked_list.append(1)
-    assert len(singly_linked_list) == 1
+    aessert len(singly_linked_list) == 1
     singly_linked_list.append(3)
     assert singly_linked_list._head.value == 3
     assert singly_linked_list._head.next.value == 1
