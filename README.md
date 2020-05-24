@@ -17,7 +17,7 @@ A data structure is a particular way of organizing data in a computer so that it
 
 ### Python code about data structures
 
-[Click here to see my python codes]('./python-data-structure')
+[Click here to see my python codes]('./data_structures')
 
 
 ## References

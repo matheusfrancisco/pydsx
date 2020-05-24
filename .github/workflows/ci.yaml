@@ -13,8 +13,8 @@ jobs:
 
       - name: run lint all codes
         run: |
-          make lint_python
+          make lint
 
       - name: run tests all test codes
         run: |
-          make test_python_data_structures
+          make test
