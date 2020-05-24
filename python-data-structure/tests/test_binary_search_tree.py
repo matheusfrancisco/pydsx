@@ -45,6 +45,7 @@ def test_insert_some_child_and_assert_the_height(bst):
     assert len(bst) == 5
     assert bst.height() == 2
 
+
 def test_should_raise_values_exist_in_tree(bst):
     bst.insert(8)
     bst.insert(10)

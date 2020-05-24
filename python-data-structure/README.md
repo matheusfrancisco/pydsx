@@ -11,4 +11,6 @@
 
 * Singly linked list
 * Double linked list
+* Tree
+* Binary Search Tree
 

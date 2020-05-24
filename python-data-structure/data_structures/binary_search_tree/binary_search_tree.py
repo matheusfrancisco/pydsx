@@ -97,4 +97,5 @@ class BinarySearchTree:
         else:
             raise ValueExistInTree("Value is already in tree")
 
+
 __all__ = ["BinarySearchTree", "ValueExistInTree"]
