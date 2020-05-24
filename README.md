@@ -8,7 +8,7 @@ design to some structures.
 
 This is the CI to run my tests in python to data structures implementations
 
-![CI](https://github.com/xico-labs/data_structures_and_algorithms/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/xico-labs/data_structures_and_algorithms_py/workflows/CI/badge.svg?branch=master)
 
 
 ## What Are Data structures?
