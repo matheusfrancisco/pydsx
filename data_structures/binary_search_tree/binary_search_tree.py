@@ -102,21 +102,28 @@ class BinarySearchTree:
         else:
             raise ValueExistInTree("Value is already in tree")
 
-    def search(self, root, value):
+    def search(self, value):
         """
           Time complexity:
             Best case: O(1) O(log n)
             Worst case: O(n)
 
-          TODO improve the method design
-          Perhaps this can be a static or class method.
+        """
+        return self._search(self.root, value)
+
+    def _search(self, root, value):
+        """
+          Time complexity:
+            Best case: O(1) O(log n)
+            Worst case: O(n)
+
         """
         if root is None or root.data == value:
             return root
 
         if root.data < value:
-            return self.search(root.right, value)
-        return self.search(root.left, value)
+            return self._search(root.right, value)
+        return self._search(root.left, value)
 
 
 __all__ = ["BinarySearchTree", "ValueExistInTree"]
