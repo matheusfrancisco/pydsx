@@ -1,6 +1,0 @@
-black
-flake8
-mypy
-pytest
-pytest-cov
-pytest-helpers-namespace
