@@ -22,10 +22,6 @@ A data structure is a particular way of organizing data in a computer so that it
 
 ## References
 
-* https://www.notion.so/matheusfrancisco/Data-structures-03f97d4ff8a34efc91415f85705207e9#b201776617f64a96aa19dbf6348b9e83
-* https://www.youtube.com/watch?v=pmN9ExDf3yQ&list=PLBZBJbE_rGRV8D7XZ08LK6z-4zPoWzu5H&index=2
-
-
 
 #### Contact me
 
