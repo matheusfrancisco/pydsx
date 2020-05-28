@@ -29,6 +29,7 @@ class BinarySearchTree:
       - [ ] TODO implement iterative insert
       - [ ] TODO implement iterative max depth or height
       - [ ] TODO implement iterative search node
+      - [ ] TODO improve remove method
     """
 
     def __init__(self):
@@ -124,6 +125,57 @@ class BinarySearchTree:
         if root.data < value:
             return self._search(root.right, value)
         return self._search(root.left, value)
+
+    def _inorder(self, current_node):
+        """
+          Time complexity:
+            Best case: O(n)
+            Worst case: O(n)
+
+        """
+        while current_node.left is not None:
+            current_node = current_node.left
+        return current_node
+
+    def remove(self, value):
+        """
+          Time complexity:
+            Best case: O(1) O(log n)
+            Worst case: O(n)
+
+        """
+        return self._remove(self.root, value)
+
+    def _remove(self, root, value):
+        """
+          Time complexity:
+            Best case: O(log n)
+            Worst case: O(n)
+
+        """
+        if root is None:
+            if self._number_of_nodes == 0:
+                return root
+            self._number_of_nodes -= 1
+            return root
+        if value < root.data:
+            root.left = self._remove(root.left, value)
+        elif value > root.data:
+            root.right = self._remove(root.right, value)
+        else:
+            if root.left is None:
+                aux_node = root.right
+                root = None
+                return aux_node
+            elif root.right is None:
+                aux_node = root.left
+                root = None
+                return aux_node
+            temp = self._inorder(root.right)
+            root.data = temp.data
+            root.right = self._remove(root.right, temp.data)
+        self._number_of_nodes -= 1
+        return root
 
 
 __all__ = ["BinarySearchTree", "ValueExistInTree"]

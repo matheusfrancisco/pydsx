@@ -65,10 +65,13 @@ def test_should_find_node_with_value(bst):
     node = bst.search(4)
     assert node.data == 4
 
+
 def test_remove_value_from_tree(bst):
     bst.insert(8)
     bst.insert(10)
     bst.insert(3)
-    bst.remove(8)
+    bst_new_without_value_removed = bst.remove(8)
+    assert bst_new_without_value_removed.data == 10
+    assert bst_new_without_value_removed.left.data == 3
+    assert bst_new_without_value_removed.right is None
     assert len(bst) == 2
-
