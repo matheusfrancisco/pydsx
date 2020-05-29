@@ -226,5 +226,27 @@ class BinarySearchTree:
             self._inorder(root.right, singly_linked_list)
         return singly_linked_list
 
+    def pre_order(self):
+        """
+          Time complexity:
+            Best case: O(n)
+            Worst case: O(n)
+        """
+        singly_linked_list = SinglyLinkedList()
+        return self._pre_order(self.root, singly_linked_list)
+
+    def _pre_order(self, root, singly_linked_list):
+        """
+          Time complexity:
+            Best case: O(n)
+            Worst case: O(n)
+
+        """
+        if root is not None:
+            singly_linked_list.append(root.data)
+            self._pre_order(root.left, singly_linked_list)
+            self._pre_order(root.right, singly_linked_list)
+        return singly_linked_list
+
 
 __all__ = ["BinarySearchTree", "ValueExistInTree"]

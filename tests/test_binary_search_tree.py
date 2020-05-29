@@ -116,3 +116,33 @@ def test_get_an_inorder_list_using_data_structure_list(bst):
     )
 
     assert has_equal_values is True
+
+
+def test_get_an_preorder_list_using_data_structure_list(bst):
+    """
+      trying to implement a different design for in preorder
+      WIP IDEA
+    """
+    singly_linked_list = SinglyLinkedList()
+    bst.insert(10)
+    bst.insert(4)
+    bst.insert(1)
+    bst.insert(5)
+    bst.insert(11)
+    bst.insert(14)
+
+    for data in [10, 4, 1, 5, 11, 14]:
+        singly_linked_list.append(data)
+
+    preorder_linked_list = bst.pre_order()
+
+    # compare itens
+    # TODO I think this compare was too hard to understand refactor this
+    has_equal_values = all(
+        map(
+            lambda x: x[0] == x[1],
+            zip(singly_linked_list, preorder_linked_list),  # noqa
+        )  # noqa
+    )
+
+    assert has_equal_values is True
