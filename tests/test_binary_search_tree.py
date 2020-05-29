@@ -1,6 +1,16 @@
 import pytest
 
 from data_structures import BinarySearchTree, ValueExistInTree
+from data_structures import SinglyLinkedList
+
+
+"""
+Improve test
+
+- [ ] Remove duplicate code and create a fixture
+- [ ] Write more test case
+
+"""
 
 
 @pytest.fixture()
@@ -75,3 +85,32 @@ def test_remove_value_from_tree(bst):
     assert bst_new_without_value_removed.left.data == 3
     assert bst_new_without_value_removed.right is None
     assert len(bst) == 2
+
+
+def test_get_an_inorder_list_using_data_structure_list(bst):
+    """
+      trying to implement a different design for in order
+      WIP IDEA
+    """
+    singly_linked_list = SinglyLinkedList()
+    bst.insert(8)
+    bst.insert(10)
+    bst.insert(3)
+    bst.insert(1)
+    bst.insert(4)
+
+    singly_linked_list.append(1, first=True)
+    singly_linked_list.append(3, first=False, tail=True)
+    singly_linked_list.append(4, first=False, tail=True)
+    singly_linked_list.append(8, first=False, tail=True)
+    singly_linked_list.append(10, first=False, tail=True)
+
+    inorder_linked_list = bst.inorder()
+
+    # compare itens
+    has_equal_values = all(
+        map(lambda x: x[0] == x[1], zip(singly_linked_list, inorder_linked_list))
+    )
+
+    assert has_equal_values is True
+
