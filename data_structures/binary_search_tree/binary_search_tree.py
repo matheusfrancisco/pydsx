@@ -126,12 +126,13 @@ class BinarySearchTree:
             return self._search(root.right, value)
         return self._search(root.left, value)
 
-    def _inorder(self, current_node):
+    def _get_lowest_node(self, current_node):
         """
           Time complexity:
             Best case: O(n)
             Worst case: O(n)
 
+          This is called inorder
         """
         while current_node.left is not None:
             current_node = current_node.left
@@ -171,7 +172,7 @@ class BinarySearchTree:
                 aux_node = root.left
                 root = None
                 return aux_node
-            temp = self._inorder(root.right)
+            temp = self._get_lowest_node(root.right)
             root.data = temp.data
             root.right = self._remove(root.right, temp.data)
         self._number_of_nodes -= 1
