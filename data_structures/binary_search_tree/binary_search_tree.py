@@ -153,6 +153,25 @@ class BinarySearchTree:
             Best case: O(log n)
             Worst case: O(n)
 
+          To think in this algorithms
+          thinked in tree cases:
+          first: remove value 3
+              4
+             / \'
+            3   5
+
+          second: remove value 6
+              4
+             / \'
+            3   6
+               /
+              5
+          thrid: remove 4
+              4
+             / \'
+            3   6
+               / \'
+              5   7
         """
         if root is None:
             if self._number_of_nodes == 0:
