@@ -1,3 +1,6 @@
+from data_structures import SinglyLinkedList
+
+
 class ValueExistInTree(Exception):
     def __init__(self, message):
         self.message = message
@@ -196,6 +199,32 @@ class BinarySearchTree:
             root.right = self._remove(root.right, temp.data)
         self._number_of_nodes -= 1
         return root
+
+    def inorder(self):
+        """
+          Time complexity:
+            Best case: O(n)
+            Worst case: O(n)
+        """
+        singly_linked_list = SinglyLinkedList()
+        return self._inorder(self.root, singly_linked_list)
+
+    def _inorder(self, root, singly_linked_list):
+        """
+          Time complexity:
+            Best case: O(n)
+            Worst case: O(n)
+
+        TODO see append tail in when list is empty
+        """
+        if root is not None:
+            self._inorder(root.left, singly_linked_list)
+            if len(singly_linked_list) >= 1:
+                singly_linked_list.append(root.data, first=False, tail=True)
+            else:
+                singly_linked_list.append(root.data)
+            self._inorder(root.right, singly_linked_list)
+        return singly_linked_list
 
 
 __all__ = ["BinarySearchTree", "ValueExistInTree"]

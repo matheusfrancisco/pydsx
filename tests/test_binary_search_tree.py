@@ -108,9 +108,11 @@ def test_get_an_inorder_list_using_data_structure_list(bst):
     inorder_linked_list = bst.inorder()
 
     # compare itens
+    # TODO I think this compare was too hard to understand refactor this
     has_equal_values = all(
-        map(lambda x: x[0] == x[1], zip(singly_linked_list, inorder_linked_list))
+        map(
+            lambda x: x[0] == x[1], zip(singly_linked_list, inorder_linked_list)
+        )  # noqa
     )
 
     assert has_equal_values is True
-
