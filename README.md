@@ -11,14 +11,15 @@ This is the CI to run my tests in python to data structures implementations
 ![CI](https://github.com/xico-labs/data_structures_and_algorithms_py/workflows/CI/badge.svg?branch=master)
 
 
-## What Are Data structures?
-
-A data structure is a particular way of organizing data in a computer so that it can be used effectively.
-
 ### Python code about data structures
 
 [Click here to see my python codes]('./data_structures')
 
+## To use in your code
+
+```
+pip install pydsx
+```
 
 ## References
 
