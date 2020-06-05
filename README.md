@@ -1,7 +1,7 @@
 # My notes and code about Data structures.
 
 
-I will try to implement some data structures using Python, Clojure and (C++ or C).
+I will try to implement some data structures using Python
 
 The idea is to study data structure and improve my skills. And try to think a new
 design to some structures.

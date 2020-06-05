@@ -1,6 +1,6 @@
 import pytest
 
-from data_structures import SinglyLinkedList
+from pydsx import SinglyLinkedList
 
 
 @pytest.fixture()

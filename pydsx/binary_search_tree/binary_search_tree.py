@@ -1,4 +1,4 @@
-from data_structures import SinglyLinkedList
+from pydsx import SinglyLinkedList
 
 
 class ValueExistInTree(Exception):

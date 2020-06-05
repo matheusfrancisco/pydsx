@@ -1,7 +1,7 @@
 import pytest
 
-from data_structures import BinarySearchTree, ValueExistInTree
-from data_structures import SinglyLinkedList
+from pydsx import BinarySearchTree, ValueExistInTree
+from pydsx import SinglyLinkedList
 
 
 """
