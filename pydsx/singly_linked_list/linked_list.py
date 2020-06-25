@@ -145,18 +145,19 @@ class SinglyLinkedList:
           After:
             N1->N2->N3->N4->Node(value)->None
         """
-        if self.__len == 1:
+        if self.__len == 0:
             self._append_first(value)
 
-        node = Node(value)
-        current_head_node = self._head
+        else:
+            node = Node(value)
+            current_head_node = self._head
 
-        while current_head_node.next is not None:
-            current_head_node = current_head_node.next
+            while current_head_node.next is not None:
+                current_head_node = current_head_node.next
 
-        node.next = current_head_node.next
-        current_head_node.next = node
-        self.__len += 1
+            node.next = current_head_node.next
+            current_head_node.next = node
+            self.__len += 1
 
     def __setitem__(self, index, new_value):
         """
