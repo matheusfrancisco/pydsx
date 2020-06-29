@@ -100,6 +100,7 @@ def test_should_remove_element_from_linked_list(singly_linked_list):
     with pytest.raises(NotImplementedError):
         singly_linked_list.remove(0)
 
+
 # TODO split in many tests case
 def test_linked_list_append_node():
     singly_linked_list = SinglyLinkedList()
@@ -113,6 +114,7 @@ def test_linked_list_append_node():
     singly_linked_list.append(7, tail=True)
     assert singly_linked_list._head.value == 5
     assert singly_linked_list._head.next.next.next.value == 7
+
 
 # Test append with tail flag
 def test_append_with_tail_flag():
