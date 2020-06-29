@@ -189,32 +189,18 @@ class SinglyLinkedList:
             Sorted SinglyLinkedList object.
         
         """
-        if reverse:
-            if self._head == None:
-                raise IndexError("The linked list is empty")       
-            if self._head.next == None:
-                return self 
-            if key == "merge":
-                return self.merge_sort(reverse)
-            elif key == "quick":
-                pass
-            elif key == "heap":
-                pass
-            else:
-                raise ValueError("Unknown sorting method specified")
+        if self._head == None:
+            raise IndexError("The linked list is empty")       
+        if self._head.next == None:
+            return self 
+        if key == "merge":
+            return self.merge_sort(reverse)
+        elif key == "quick":
+            pass
+        elif key == "heap":
+            pass
         else:
-            if self._head == None:
-                raise IndexError("The linked list is empty")       
-            if self._head.next == None:
-                return self 
-            if key == "merge":
-                return self.merge_sort()
-            elif key == "quick":
-                pass
-            elif key == "heap":
-                pass
-            else:
-                raise ValueError("Unknown sorting method specified")
+            raise ValueError("Unknown sorting method specified")
 
     def merge_sort(self, reverse = False):
         """

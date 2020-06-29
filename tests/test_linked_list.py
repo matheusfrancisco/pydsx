@@ -139,19 +139,15 @@ def test_reverse_merge_sort():
     l.append(7)
     l.append(3)
     l = l.sort()
-    assert l._head.value == 1
-    assert l._head.next.value == 2
-    assert l._head.next.next.value == 3
-    assert l._head.next.next.next.value == 4
-    assert l._head.next.next.next.next.value == 5
-    assert l._head.next.next.next.next.next.value == 6
-    assert l._head.next.next.next.next.next.next.value == 7
-    assert l._head.next.next.next.next.next.next.next.value == 8
-    assert l._head.next.next.next.next.next.next.next.next.value == 9
-    assert l._head.next.next.next.next.next.next.next.next.next == None
+    list_to_compare = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    has_equal_values = all(
+        map(lambda x: x[0] == x[1], zip(l, list_to_compare))
+    )
+    assert has_equal_values is True
 
 # Test merge_sort with reverse flag
-def test_reverse_merge_sort():
+def test_merge_sort():
     l = SinglyLinkedList()
     l.append(6)
     l.append(1)
@@ -163,12 +159,9 @@ def test_reverse_merge_sort():
     l.append(7)
     l.append(3)
     l = l.sort(reverse=True)
-    assert l._head.value == 9
-    assert l._head.next.value == 8
-    assert l._head.next.next.value == 7
-    assert l._head.next.next.next.value == 6
-    assert l._head.next.next.next.next.value == 5
-    assert l._head.next.next.next.next.next.value == 4
-    assert l._head.next.next.next.next.next.next.value == 3
-    assert l._head.next.next.next.next.next.next.next.value == 2
-    assert l._head.next.next.next.next.next.next.next.next.value == 1
+    list_to_compare = [9, 8, 7, 6, 5, 4 ,3 ,2, 1]
+
+    has_equal_values = all(
+        map(lambda x: x[0] == x[1], zip(l, list_to_compare))
+    )
+    assert has_equal_values is True
