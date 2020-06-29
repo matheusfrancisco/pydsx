@@ -44,6 +44,9 @@ class Node:
         return f"Node: {self.value}"
 
 
+
+
+
 class SinglyLinkedList:
     def __init__(self, head=None):
         self._head = head
@@ -172,6 +175,148 @@ class SinglyLinkedList:
                 raise IndexError("Index out of range")
             current_node = current_node.next
         current_node.value = new_value
+    
+    def sort(self, reverse = False, key = "merge"):
+        """
+        Sorts the SinglyLinkedList object it's called on.
+
+        Args:
+            reverse: Flag to reverse the sorting order, is set to false by
+            default.
+            key: parameter for choosing the sorting algorithm.
+
+        Returns:
+            Sorted SinglyLinkedList object.
+        
+        """
+        if reverse:
+            if self._head == None:
+                raise IndexError("The linked list is empty")       
+            if self._head.next == None:
+                return self 
+            if key == "merge":
+                return self.merge_sort(reverse)
+            elif key == "quick":
+                pass
+            elif key == "heap":
+                pass
+            else:
+                raise ValueError("Unknown sorting method specified")
+        else:
+            if self._head == None:
+                raise IndexError("The linked list is empty")       
+            if self._head.next == None:
+                return self 
+            if key == "merge":
+                return self.merge_sort()
+            elif key == "quick":
+                pass
+            elif key == "heap":
+                pass
+            else:
+                raise ValueError("Unknown sorting method specified")
+
+    def merge_sort(self, reverse = False):
+        """
+        Sorts the SinglyLinkedList object using merge sort algorithm.
+
+        Args:
+            reverse: Flag to reverse the sorting order, is set to false by
+            default.
+
+        Returns:
+            Sorted SinglyLinkedList object.
+
+        Time Complexity: O(NlogN)
+        """
+        if self._head == None or self._head.next == None:
+            return self
+
+        leftHalf, rightHalf = self._split_list()
+
+        leftHalf = leftHalf.merge_sort(reverse)
+        rightHalf = rightHalf.merge_sort(reverse)
+
+        return leftHalf._merge_lists(rightHalf, reverse)
+
+    def _split_list(self):
+        """
+        Splits the SinglyLinkedList object into two halves.
+
+        Returns:
+            Tuple of two SinglyLinkedList objects that contain two
+            halves of the original SinglyLinkedList object. 
+        """
+
+        rightHalf = SinglyLinkedList()
+        leftHalf = SinglyLinkedList()
+        midPointer = self._head
+        frontRunner = midPointer.next
+
+        while frontRunner != None:
+            frontRunner = frontRunner.next
+
+            if frontRunner != None:
+                frontRunner = frontRunner.next
+                midPointer = midPointer.next
+
+        
+        rightHalf._head = midPointer.next
+        midPointer.next = None
+        leftHalf._head = self._head
+        return leftHalf, rightHalf
+
+    def _merge_lists(self, rightHalf, reverse = False):
+        """
+        Merges the nodes of two SinglyLinkedList objects in an 
+        ascending/descending order. 
+
+        Args:
+            rightHalf: Second SinglyLinkedList object to be merged with the
+            one function is called on.
+            reverse: Flag to reverse the sorting order, is set to false by
+            default.
+
+        Returns:
+            A merged sorted SinglyLinkedList object.
+        """
+        leftHalf = self._head
+        merged_list = SinglyLinkedList()
+        fake_head = Node(None)
+        curr = fake_head
+        rightHalf = rightHalf._head
+
+        if reverse:
+            while leftHalf and rightHalf:
+                if leftHalf.value > rightHalf.value:
+                    curr.next = leftHalf
+                    leftHalf = leftHalf.next
+
+                else:
+                    curr.next = rightHalf
+                    rightHalf = rightHalf.next
+
+                curr = curr.next
+        else:
+            while leftHalf and rightHalf:
+                if leftHalf.value < rightHalf.value:
+                    curr.next = leftHalf
+                    leftHalf = leftHalf.next
+
+                else:
+                    curr.next = rightHalf
+                    rightHalf = rightHalf.next
+
+                curr = curr.next
+
+        if leftHalf == None:
+            curr.next = rightHalf
+
+        elif rightHalf == None:
+            curr.next = leftHalf
+        merged_list._head = fake_head.next
+
+        return merged_list
 
 
 __all__ = ["SinglyLinkedList"]

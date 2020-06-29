@@ -124,3 +124,49 @@ def test_append_with_tail_flag():
     assert len(singly_linked_list) == 2
     assert singly_linked_list._head.next.value == 7
 
+# Test merge_sort 
+def test_reverse_merge_sort():
+    l = SinglyLinkedList()
+    l.append(6)
+    l.append(1)
+    l.append(2)
+    l.append(4)
+    l.append(8)
+    l.append(9)
+    l.append(5)
+    l.append(7)
+    l.append(3)
+    l = l.sort()
+    assert l._head.value == 1
+    assert l._head.next.value == 2
+    assert l._head.next.next.value == 3
+    assert l._head.next.next.next.value == 4
+    assert l._head.next.next.next.next.value == 5
+    assert l._head.next.next.next.next.next.value == 6
+    assert l._head.next.next.next.next.next.next.value == 7
+    assert l._head.next.next.next.next.next.next.next.value == 8
+    assert l._head.next.next.next.next.next.next.next.next.value == 9
+    assert l._head.next.next.next.next.next.next.next.next.next == None
+
+# Test merge_sort with reverse flag
+def test_reverse_merge_sort():
+    l = SinglyLinkedList()
+    l.append(6)
+    l.append(1)
+    l.append(2)
+    l.append(4)
+    l.append(8)
+    l.append(9)
+    l.append(5)
+    l.append(7)
+    l.append(3)
+    l = l.sort(reverse=True)
+    assert l._head.value == 9
+    assert l._head.next.value == 8
+    assert l._head.next.next.value == 7
+    assert l._head.next.next.next.value == 6
+    assert l._head.next.next.next.next.value == 5
+    assert l._head.next.next.next.next.next.value == 4
+    assert l._head.next.next.next.next.next.next.value == 3
+    assert l._head.next.next.next.next.next.next.next.value == 2
+    assert l._head.next.next.next.next.next.next.next.next.value == 1
