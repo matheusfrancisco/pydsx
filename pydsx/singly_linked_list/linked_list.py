@@ -44,9 +44,6 @@ class Node:
         return f"Node: {self.value}"
 
 
-
-
-
 class SinglyLinkedList:
     def __init__(self, head=None):
         self._head = head
@@ -148,6 +145,7 @@ class SinglyLinkedList:
           After:
             N1->N2->N3->N4->Node(value)->None
         """
+
         if self.__len == 0:
             self._append_first(value)
 
@@ -167,6 +165,7 @@ class SinglyLinkedList:
           Time Complexity O(N)
 
         """
+
         current_node = self._head
         if current_node is None:
             raise IndexError("The linked list is empty")
@@ -175,8 +174,8 @@ class SinglyLinkedList:
                 raise IndexError("Index out of range")
             current_node = current_node.next
         current_node.value = new_value
-    
-    def sort(self, reverse = False, key = "merge"):
+
+    def sort(self, reverse=False, key="merge"):
         """
         Sorts the SinglyLinkedList object it's called on.
 
@@ -187,12 +186,12 @@ class SinglyLinkedList:
 
         Returns:
             Sorted SinglyLinkedList object.
-        
         """
-        if self._head == None:
-            raise IndexError("The linked list is empty")       
-        if self._head.next == None:
-            return self 
+
+        if self._head is None:
+            raise IndexError("The linked list is empty")
+        if self._head.next is None:
+            return self
         if key == "merge":
             return self.merge_sort(reverse)
         elif key == "quick":
@@ -202,7 +201,7 @@ class SinglyLinkedList:
         else:
             raise ValueError("Unknown sorting method specified")
 
-    def merge_sort(self, reverse = False):
+    def merge_sort(self, reverse=False):
         """
         Sorts the SinglyLinkedList object using merge sort algorithm.
 
@@ -215,7 +214,7 @@ class SinglyLinkedList:
 
         Time Complexity: O(NlogN)
         """
-        if self._head == None or self._head.next == None:
+        if self._head is None or self._head.next is None:
             return self
 
         leftHalf, rightHalf = self._split_list()
@@ -231,7 +230,7 @@ class SinglyLinkedList:
 
         Returns:
             Tuple of two SinglyLinkedList objects that contain two
-            halves of the original SinglyLinkedList object. 
+            halves of the original SinglyLinkedList object.
         """
 
         rightHalf = SinglyLinkedList()
@@ -239,23 +238,22 @@ class SinglyLinkedList:
         midPointer = self._head
         frontRunner = midPointer.next
 
-        while frontRunner != None:
+        while frontRunner is not None:
             frontRunner = frontRunner.next
 
-            if frontRunner != None:
+            if frontRunner is not None:
                 frontRunner = frontRunner.next
                 midPointer = midPointer.next
 
-        
         rightHalf._head = midPointer.next
         midPointer.next = None
         leftHalf._head = self._head
         return leftHalf, rightHalf
 
-    def _merge_lists(self, rightHalf, reverse = False):
+    def _merge_lists(self, rightHalf, reverse=False):
         """
-        Merges the nodes of two SinglyLinkedList objects in an 
-        ascending/descending order. 
+        Merges the nodes of two SinglyLinkedList objects in an
+        ascending/descending order.
 
         Args:
             rightHalf: Second SinglyLinkedList object to be merged with the
@@ -266,6 +264,7 @@ class SinglyLinkedList:
         Returns:
             A merged sorted SinglyLinkedList object.
         """
+
         leftHalf = self._head
         merged_list = SinglyLinkedList()
         fake_head = Node(None)
@@ -295,10 +294,10 @@ class SinglyLinkedList:
 
                 curr = curr.next
 
-        if leftHalf == None:
+        if leftHalf is None:
             curr.next = rightHalf
 
-        elif rightHalf == None:
+        elif rightHalf is None:
             curr.next = leftHalf
         merged_list._head = fake_head.next
 
