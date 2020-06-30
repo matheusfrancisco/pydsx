@@ -125,3 +125,43 @@ def test_append_with_tail_flag():
     singly_linked_list.append(7, tail=True)
     assert len(singly_linked_list) == 2
     assert singly_linked_list._head.next.value == 7
+
+# Test merge_sort 
+def test_reverse_merge_sort():
+    l = SinglyLinkedList()
+    l.append(6)
+    l.append(1)
+    l.append(2)
+    l.append(4)
+    l.append(8)
+    l.append(9)
+    l.append(5)
+    l.append(7)
+    l.append(3)
+    l = l.sort()
+    list_to_compare = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    has_equal_values = all(
+        map(lambda x: x[0] == x[1], zip(l, list_to_compare))
+    )
+    assert has_equal_values is True
+
+# Test merge_sort with reverse flag
+def test_merge_sort():
+    l = SinglyLinkedList()
+    l.append(6)
+    l.append(1)
+    l.append(2)
+    l.append(4)
+    l.append(8)
+    l.append(9)
+    l.append(5)
+    l.append(7)
+    l.append(3)
+    l = l.sort(reverse=True)
+    list_to_compare = [9, 8, 7, 6, 5, 4 ,3 ,2, 1]
+
+    has_equal_values = all(
+        map(lambda x: x[0] == x[1], zip(l, list_to_compare))
+    )
+    assert has_equal_values is True
